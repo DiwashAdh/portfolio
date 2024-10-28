@@ -1,8 +1,18 @@
 import { Link } from 'react-router-dom';
 
-export default function Projects({ title, date, categories, description, projectImage, id }) {
+export default function Projects({ title, date, categories, description, projectImage, id, onRouteChange }) {
+  
+  const handleClick = () => {
+    console.log("Card clicked:", id); // Debugging log
+    onRouteChange(`/projects/${id}`);
+  };
+
   return (
-    <Link to={`/projects/${id}`} className="bg-white shadow-md rounded-xl overflow-hidden transition duration-300 ease-in-out hover:shadow-xl">
+    <Link
+      to={`/projects/${id}`}
+      onClick={handleClick} // Call the transition function here
+      className="bg-white shadow-md rounded-xl overflow-hidden transition duration-300 ease-in-out hover:shadow-xl"
+    >
       <img
         className="w-full h-52 object-cover p-2 rounded-2xl"
         src={projectImage}

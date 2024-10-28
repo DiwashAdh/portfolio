@@ -111,3 +111,36 @@
 .cards-up {
   animation: cardsUp 1s ease forwards; /* Duration and easing function */
 }
+
+
+.circle-transition {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 10vw; /* Small starting circle */
+  height: 10vw;
+  background-color: transparent; /* Transparent circle */
+  border-radius: 50%;
+  box-shadow: 0 0 0 100vh rgb(202, 220, 234); /* Creates white area around transparent circle */
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.circle-transition.entering {
+  animation: openAnimation 2.5s ease forwards;
+}
+
+@keyframes openAnimation {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0); /* Small transparent circle */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(20); /* Expands to cover the screen */
+  }
+}
+
+

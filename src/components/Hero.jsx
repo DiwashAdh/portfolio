@@ -50,7 +50,7 @@ export default function Hero() {
       <div className="relative mb-10">
         <img
           className={`rounded-full w-28 h-28 object-cover shadow-lg ${showProfile ? 'slide-up' : 'opacity-0'}`}
-          src={profile2}
+          src={profile}
           alt="Profile"
         />
       </div>
